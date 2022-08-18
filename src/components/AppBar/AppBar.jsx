@@ -1,15 +1,15 @@
-import { NavLinkItem } from './AppBar.styled';
+import { NavLinkItem, Header } from './AppBar.styled';
 
 const AppBar = () => {
   return (
-    <div>
+    <Header>
       <NavLinkItem to="/" key="/">
         Home
       </NavLinkItem>
       <NavLinkItem to="/movies" key="/movies">
         Movies
       </NavLinkItem>
-    </div>
+    </Header>
   );
 };
 

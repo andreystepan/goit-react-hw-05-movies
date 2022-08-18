@@ -1,7 +1,7 @@
 import { getPopularMovies } from 'API/moviesAPI';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Item, NavLinkItem } from './Home.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,9 +15,9 @@ const Home = () => {
       <ul>
         {movies.map(({ id, title }) => {
           return (
-            <li key={id}>
-              <NavLink to={`/movies/${id}`}>{title}</NavLink>
-            </li>
+            <Item key={id}>
+              <NavLinkItem to={`/movies/${id}`}>{title}</NavLinkItem>
+            </Item>
           );
         })}
       </ul>

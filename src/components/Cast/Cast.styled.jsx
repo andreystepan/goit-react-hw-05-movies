@@ -9,7 +9,8 @@ export const Container = styled.div`
 
 export const Item = styled.li`
   list-style: none;
-  flex-basis: calc((100% - 20px) / 3);
+  flex-basis: calc((100% - 20px) / 4);
+  text-align: center;
   
   padding: 10px;
   background-color: #fff;

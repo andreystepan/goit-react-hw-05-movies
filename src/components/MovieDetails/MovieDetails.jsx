@@ -1,12 +1,13 @@
 import { getByIdMovies } from 'API/moviesAPI';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { LinkBtn, Container, Box, NavLink } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     getByIdMovies(movieId).then(setMovieInfo);
@@ -21,7 +22,7 @@ const MovieDetails = () => {
   return (
     <>
       <Container>
-        <LinkBtn to="/"> Go back</LinkBtn>
+        <LinkBtn to={location?.state?.from ?? '/'}> Go back</LinkBtn>
         <div>
           <img
             width="200"
